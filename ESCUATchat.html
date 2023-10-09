@@ -1,4 +1,28 @@
 <html>
+	<input type="button" value="Start Chat" onclick="startChat();"/><br/><br/><br/>
+    <input type="button" value="Clear Chat Session" onclick="clearSession();"/><br/>
+<script>
+        function startChat() {
+            
+            console.log( 'Inside Start Chat' );
+            embedded_svc.liveAgentAPI.startChat({
+                directToAgentRouting: {
+                buttonId: "5735f000000Tpl7",
+                fallback: true
+            },
+            extraPrechatInfo: [],
+            extraPrechatFormDetails: []
+            });
+            
+        }
+        
+        function clearSession() {
+            
+            console.log( 'Inside Start Chat' );
+            embedded_svc.liveAgentAPI.clearSession();
+            
+        }
+    </script>
 <style type='text/css'>
 	.embeddedServiceHelpButton .helpButton .uiButton {
 		background-color: #009F65;
